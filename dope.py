@@ -221,7 +221,7 @@ class DOPE_Agent:
         sigma = torch.sqrt((torch.pow(quantiles_b1 + eps1 - mu, 2) + torch.pow(quantiles_b2 + eps2 - mu, 2)) + eps1) 
         belief_dist = mu + beta * sigma # [batch_size, n_quantiles]
         # DPG loss
-        qval_batch = torch.mean(min_quantiles, axis=-1)
+        qval_batch = torch.mean(belief_dist, axis=-1)
         policy_loss = (-qval_batch).mean()
         return policy_loss
 
@@ -256,7 +256,7 @@ class DOPE_Agent:
             done_batch = torch.FloatTensor(samples.real_done).to(device).unsqueeze(1)
             
             # update q-funcs
-            q1_loss_step, q2_loss_step, quantiles1_step, quantiles2_step = self.update_q_functions(state_batch, action_batch, reward_batch, nextstate_batch, done_batch, optimism)
+            q1_loss_step, q2_loss_step, quantiles1_step, quantiles2_step = self.update_q_functions(state_batch, action_batch, reward_batch, nextstate_batch, done_batch, beta)
             q_loss_step = q1_loss_step + q2_loss_step
 
             # measure wasserstein distance
@@ -280,7 +280,7 @@ class DOPE_Agent:
                 # update policy
                 for p in self.q_funcs.parameters():
                     p.requires_grad = False
-                pi_loss_step = self.update_policy(state_batch, optimism)
+                pi_loss_step = self.update_policy(state_batch, beta)
                 self.policy_optimizer.zero_grad()
                 pi_loss_step.backward()
                 self.policy_optimizer.step()
