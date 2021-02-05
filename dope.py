@@ -91,7 +91,7 @@ class DOPE_Agent:
         self.kappa = kappa
 
         # bandit top-down controller
-        self.TDC = ExpWeights(arms=[0], lr=bandit_lr, init=0.0, use_std=True) 
+        self.TDC = ExpWeights(arms=[-1, 0], lr=bandit_lr, init=0.0, use_std=True) 
 
         # init optimizers
         self.q_optimizer = torch.optim.Adam(self.q_funcs.parameters(), lr=lr)
