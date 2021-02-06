@@ -2,3 +2,5 @@ __pycache__/
 dope_runs/
 logs/
 gifs/
+dope.sbatch
+sweep.sh
