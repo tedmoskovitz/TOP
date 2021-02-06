@@ -1,8 +1,8 @@
 ## Dynamic Optimistic and Pessimistic Estimation (DOPE)
 
-Implementation of DOPE. 
+Implementation of DOPE, an off-policy deep actor-critic algorithm for continuous control. 
 
-
+![](extras/halfcheetah.gif)
 
 To run:
 
@@ -22,3 +22,6 @@ Requirements:
 - [Tensorboard](https://www.tensorflow.org/tensorboard)
 - [Mujoco_py](https://github.com/openai/mujoco-py) >= 2.0.2.13
 - [OpenAI Gym](https://gym.openai.com/) >= 0.15.7
+
+
+
