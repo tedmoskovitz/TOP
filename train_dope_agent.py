@@ -91,7 +91,6 @@ def train_agent_model_free(agent: DOPE_Agent, env: GYM_ENV, params: Dict) -> Non
             # update if it's time
             if cumulative_timestep % update_timestep == 0 and cumulative_timestep > n_collect_steps:
                 q1_loss, q2_loss, pi_loss, avg_wd, q1, q2 = agent.optimize(update_timestep, optimism, state_filter=state_filter)
-                #print (i_episode, q1_loss, q2_loss, agent.TDC.get_probs())
                 n_updates += 1
             # logging
             if cumulative_timestep % log_interval == 0 and cumulative_timestep > n_collect_steps:
@@ -105,7 +104,7 @@ def train_agent_model_free(agent: DOPE_Agent, env: GYM_ENV, params: Dict) -> Non
 
                 # bandit tracking
                 writer.add_scalar('Distributions/optimism', optimism, n_updates)
-                arm_probs = agent.TDC.get_probs() #np.exp(x) for x in agent.TDC.l.values()]
+                arm_probs = agent.TDC.get_probs() 
                 for i, p in enumerate(arm_probs):
                     writer.add_scalar(f'Distributions/arm{i}', p, n_updates)
 
