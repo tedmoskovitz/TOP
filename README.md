@@ -2,7 +2,7 @@
 
 Implementation of DOPE, an off-policy deep actor-critic algorithm for continuous control. 
 
-![](extras/halfcheetah.gif)
+![](extras/ant.gif)
 
 To run:
 
