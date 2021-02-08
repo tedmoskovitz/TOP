@@ -12,6 +12,10 @@ python train_dope_agent.py
 
 
 
+We've also included the saved runs across 10 seeds for each environment from the paper in the ```runs``` folder. Each file contains the reward curves used for Figure 3, and is structured as a $10 \times 1000$ matrix, with each row representing a different seed. 
+
+
+
 Built on top of the fantastic [TD3 implementation](https://github.com/fiorenza2/TD3_PyTorch) by Philip Ball. 
 
 
