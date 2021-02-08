@@ -12,7 +12,7 @@ python train_dope_agent.py
 
 
 
-We've also included the saved runs across 10 seeds for each environment from the paper in the ```runs``` folder. Each file contains the reward curves used for Figure 3, and is structured as a $10 \times 1000$ matrix, with each row representing a different seed. 
+We've also included the saved runs across 10 seeds for each environment from the paper in the ```runs``` folder. Each file contains the reward curves used for Figure 3, and is structured as a 10 x 1000 matrix, with each row representing a different seed. 
 
 
 
