@@ -43,8 +43,8 @@ def parse_args():
     # critic
     parser.add_argument('--critic_lr', default=1e-3, type=float)
     parser.add_argument('--critic_beta', default=0.9, type=float)
-    parser.add_argument('--critic_tau', default=0.01, type=float) # try 0.05 or 0.1
-    parser.add_argument('--critic_target_update_freq', default=2, type=int) # try to change it to 1 and retain 0.01 above
+    parser.add_argument('--critic_tau', default=0.01, type=float) 
+    parser.add_argument('--critic_target_update_freq', default=2, type=int) 
     # actor
     parser.add_argument('--actor_lr', default=1e-3, type=float)
     parser.add_argument('--actor_beta', default=0.9, type=float)

@@ -470,8 +470,6 @@ class TOPRadSacAgent(object):
             # construct belief distribution
             belief_dist = mu + beta * sigma  # [batch_size, n_quantiles]
             
-            #target_V = torch.min(target_Q1,
-            #                     target_Q2) - self.alpha.detach() * log_pi # critics usually batch_size x 1, now batch_size x n_quantiles
             quantile_target = reward[..., None] + (not_done[..., None] * self.discount * belief_dist[:, None, :]) # batch_size x 1 x n_quantiles
             quantile_target -= self.alpha.detach() * log_pi
             ##########################################
@@ -513,8 +511,6 @@ class TOPRadSacAgent(object):
         belief_dist = mu + beta * sigma # [batch_size, n_quantiles]
         actor_Q = torch.mean(belief_dist, axis=-1) # [batch_size]
         actor_loss = (self.alpha.detach() * log_pi - actor_Q).mean()
-        #actor_Q = torch.min(actor_Q1, actor_Q2)
-        #actor_loss = (self.alpha.detach() * log_pi - actor_Q).mean()
         ###################################################
 
         if step % self.log_interval == 0:
@@ -593,10 +589,6 @@ class TOPRadSacAgent(object):
                 self.encoder_tau
             )
         
-        #if step % self.cpc_update_freq == 0 and self.encoder_type == 'pixel':
-        #    obs_anchor, obs_pos = cpc_kwargs["obs_anchor"], cpc_kwargs["obs_pos"]
-        #    self.update_cpc(obs_anchor, obs_pos,cpc_kwargs, L, step)
-
     def save(self, model_dir, step):
         torch.save(
             self.actor.state_dict(), '%s/actor_%s.pt' % (model_dir, step)
