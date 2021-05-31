@@ -1,13 +1,17 @@
-## Dynamic Optimistic and Pessimistic Estimation (DOPE)
+## Tactical Optimistic and Pessimistic estimation (TOP)
 
-Implementation of DOPE, an off-policy deep actor-critic algorithm for continuous control, from our paper [Deep Reinforcement Learning with Dynamic Optimism](https://arxiv.org/abs/2102.03765). 
+Implementation of TOP, an off-policy deep actor-critic algorithm for continuous control, from our paper [Deep Reinforcement Learning with Dynamic Optimism](https://arxiv.org/abs/2102.03765). 
 
 ![](extras/ant.gif)
+
+
+
+*Note: an earlier version of this algorithm appeared under the name "Dynamic Optimistic and Pessimistic Estimation" (DOPE). We changed the name after the release of a different [DOPE](https://arxiv.org/abs/2103.16596).* 
 
 To run:
 
 ```python
-python train_dope_agent.py
+python train_top_agent.py
 ```
 
 
@@ -16,7 +20,7 @@ We've also included the saved runs across 10 seeds for each environment from the
 
 
 
-Built on top of the fantastic [TD3 implementation](https://github.com/fiorenza2/TD3_PyTorch) by Philip Ball. 
+TOP-TD3 built on top of the fantastic [TD3 implementation](https://github.com/fiorenza2/TD3_PyTorch) by Philip Ball. 
 
 
 
@@ -41,4 +45,3 @@ If you find this code useful, it would be great if you could cite us using:
       primaryClass={cs.LG}
 }
 ```
-

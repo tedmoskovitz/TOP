@@ -13,7 +13,7 @@ from typing import Callable, Dict
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
-class DOPE_Agent:
+class TOP_Agent:
 
     def __init__(
         self,

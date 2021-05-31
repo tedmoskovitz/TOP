@@ -10,7 +10,7 @@ import pdb
 from torch.utils.tensorboard import SummaryWriter
 from typing import Dict, Callable
 
-from dope import DOPE_Agent
+from top import TOP_Agent
 from utils import MeanStdevFilter, Transition, make_gif, make_checkpoint
 
 GYM_ENV = gym.wrappers.time_limit.TimeLimit
