@@ -471,7 +471,6 @@ class TOPRadSacAgent(object):
             belief_dist = mu + beta * sigma  # [batch_size, n_quantiles]
             
             quantile_target = reward[..., None] + (not_done[..., None] * self.discount * belief_dist[:, None, :]) # batch_size x 1 x n_quantiles
-            quantile_target -= self.alpha.detach() * log_pi
             ##########################################
 
         # get current Q estimates
