@@ -1,6 +1,6 @@
 ## Tactical Optimistic and Pessimistic estimation (TOP)
 
-Implementation of TOP, an off-policy deep actor-critic algorithm for continuous control, from our paper [Deep Reinforcement Learning with Dynamic Optimism](https://arxiv.org/abs/2102.03765). 
+Implementation of TOP, an off-policy deep actor-critic algorithm for continuous control, from our paper [Tactical Optimism and Pessimism for Deep Reinforcement Learning](https://arxiv.org/abs/2102.03765). 
 
 ![](extras/ant.gif)
 
@@ -44,9 +44,9 @@ Requirements:
 If you find this code useful, it would be great if you could cite us using: 
 
 ```
-@misc{moskovitz2021deep,
-      title={Deep Reinforcement Learning with Dynamic Optimism}, 
-      author={Ted Moskovitz and Jack Parker-Holder and Aldo Pacchiano and Michael Arbel},
+@misc{moskovitz2021tactical,
+      title={Tactical Optimism and Pessimism for Deep Reinforcement Learning}, 
+      author={Ted Moskovitz and Jack Parker-Holder and Aldo Pacchiano and Michael Arbel and Michael I. Jordan},
       year={2021},
       eprint={2102.03765},
       archivePrefix={arXiv},
