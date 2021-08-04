@@ -1,12 +1,10 @@
 ## Tactical Optimistic and Pessimistic estimation (TOP)
 
-Implementation of TOP, an off-policy deep actor-critic algorithm for continuous control, from our paper [Tactical Optimism and Pessimism for Deep Reinforcement Learning](https://arxiv.org/abs/2102.03765). 
+Implementation of TOP, an off-policy deep actor-critic framework for continuous control, from our paper [Tactical Optimism and Pessimism for Deep Reinforcement Learning](https://arxiv.org/abs/2102.03765). 
 
 ![](extras/ant.gif)
 
 
-
-*Note: an earlier version of this algorithm appeared under the name "Dynamic Optimistic and Pessimistic Estimation" (DOPE). We changed the name after the release of a different [DOPE](https://arxiv.org/abs/2103.16596).* 
 
 **Running Mujoco:**
 
@@ -37,19 +35,4 @@ Requirements:
 - [Mujoco_py](https://github.com/openai/mujoco-py) >= 2.0.2.13 (Mujoco only)
 - [OpenAI Gym](https://gym.openai.com/) >= 0.15.7 
 - [DM Control suite](https://github.com/deepmind/dm_control) (DM Control only)
-- [dmc2gym](https://github.com/denisyarats/dmc2gym) (DM Contorl only)
-
-
-
-If you find this code useful, it would be great if you could cite us using: 
-
-```
-@misc{moskovitz2021tactical,
-      title={Tactical Optimism and Pessimism for Deep Reinforcement Learning}, 
-      author={Ted Moskovitz and Jack Parker-Holder and Aldo Pacchiano and Michael Arbel and Michael I. Jordan},
-      year={2021},
-      eprint={2102.03765},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
-}
-```
+- [dmc2gym](https://github.com/denisyarats/dmc2gym) (DM Control only)
